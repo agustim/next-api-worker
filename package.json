@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "dev": "DEBUG=next-api-worker node server/dist/app.js",
+    "start": "node server/dist/app.js -p 3000 -pn 3001 -pw 3002"
+  }
+}
