@@ -1,4 +1,10 @@
 {
+  "name": "server-next-api-worker",
+  "version": "0.2.0",
+  "private": false,
+  "bin": {
+    "next-api-worker": "./dist/app.js"
+  },
   "devDependencies": {
     "@types/debug": "^4.1.12",
     "@types/express": "^5.0.0",
@@ -9,7 +15,7 @@
   },
   "scripts": {
     "dev": "nodemon",
-    "build": "rm -rf ./dist && tsc",
+    "build": "rm -rf ./dist && tsc && echo \"#!/usr/bin/env node\n\n\" | cat - dist/app.js > temp && mv temp dist/app.js && chmod +x dist/app.js",
     "start": "npm run build && node dist/app.js"
   },
   "dependencies": {
